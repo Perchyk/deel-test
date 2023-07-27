@@ -1,3 +1,12 @@
+# A few words about the task
+
+A proper combobox is actually one of the most challenging UI components to implement, so obviously it's not perfect given the timeframe.
+One thing that is certainly needed for good accessibility is keyboard events which I decided not to implement to save time - because proper accessibility is an absolute rabbit hole!
+I deliberately didn't use scss here for simplicity - even though it matches the BEM naming convention really well.
+Another thing that could be used here but is a definite overkill for the test task is the virtualization of the dropdown list.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

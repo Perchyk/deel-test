@@ -1,0 +1,92 @@
+.autocomplete {
+    position: relative;
+    width: 100%;
+}
+
+.autocomplete__label {
+    position: absolute;
+    top: -24px;
+}
+
+.autocomplete__input {
+    height: 40px;
+    border: 1px solid gray;
+    outline: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0 7px;
+    background: rgba(245, 246, 244, 0.881);
+    transition: 0.05s ease;
+    color: black;
+    border-radius: 10px;
+    width: calc(100% - 7px - 7px);
+}
+
+.autocomplete__input--with-results {
+    border-radius: 10px 10px 0 0;
+}
+
+.autocomplete__suggestions {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 0 0 10px 10px;
+    z-index: 100;
+    background-color: white;
+    overflow: auto;
+}
+
+.autocomplete__suggestion {
+    height: 25px;
+    padding: 0 7px;
+    cursor: pointer;
+}
+
+.autocomplete__suggestion:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.autocomplete__suggestion:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+}
+
+.autocomplete__suggestion:hover {
+    background: rgb(224, 235, 235);
+}
+
+.autocomplete__suggestion-text {
+    line-height: 25px;
+}
+
+.autocomplete__suggestion-match {
+    background-color: pink;
+}
+
+.spinner {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+}
+
+.loader {
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+  
+  
