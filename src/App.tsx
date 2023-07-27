@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Autocomplete, AutocompleteData } from './components/autocomplete/autocomplete';
 import './app.css';
 
@@ -38,9 +38,9 @@ function App() {
     fetchCharacters('');
   }, []);
 
-  const handleChange = (value: string) => {
+  const handleChange = useCallback((value: string) => {
     fetchCharacters(value);
-  };
+  }, []);
 
   return (
     <div className='container'>

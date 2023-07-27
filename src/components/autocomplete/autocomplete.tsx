@@ -49,7 +49,7 @@ export const Autocomplete = (props: AutocompleteProps) => {
           }
           onChange(event.target.value);
         }),
-      []
+      [minRequestLength, onChange]
      );
 
     const handleBlur = () => {
@@ -85,11 +85,12 @@ export const Autocomplete = (props: AutocompleteProps) => {
           ) : null
         }
         <input type="text" role="combobox" className={`autocomplete__input ${isDropdownVisible ? 'autocomplete__input--with-results' : ''}`}
-          autoCapitalize='off' autoComplete='off' spellCheck="false"
+          autoCapitalize='off' autoComplete='off' spellCheck="false" aria-expanded={isDropdownVisible}
           onInput={handleInput} onBlur={handleBlur} onFocus={handleFocus} onChange={debounce(handleChange)} value={inputValue} {...inputProps}></input>
         {
           // Hardcoded maxHeight is intentional here to showcase that overflow is handled.
           // In real world, this would be handled through a styling prop or the class name.
+          // We could also limit max amount of results with a prop `numberOfResults` above.
           isDropdownVisible ? (
             <div className="autocomplete__suggestions" style={{maxHeight: '150px'}}>
               { data.map((item) => {
